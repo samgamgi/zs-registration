@@ -1,22 +1,23 @@
 class InventoriesController < ApplicationController
   before_action :set_inventory, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
-    @inventories = Inventory.all
+    @inventories = current_user.inventories
   end
 
   def show
   end
 
   def new
-    @inventory = Inventory.new
+    @inventory = current_user.inventories.build
   end
 
   def edit
   end
 
   def create
-    @inventory = Inventory.new(inventory_params)
+    @inventory = current_user.inventories.build(inventory_params)
 
     respond_to do |format|
       if @inventory.save

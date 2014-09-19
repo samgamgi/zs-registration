@@ -1,6 +1,9 @@
-<h1>Listing inventories</h1>
-
-<table>
+<%= render 'pages/header'%>
+<div class="jumbotron center">
+<h3>Current Inventory Order</h3>
+<br>
+<br>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Description</th>
@@ -15,12 +18,13 @@
     <% @inventories.each do |inventory| %>
       <tr>
         <td><%= inventory.description %></td>
+        <!-- <td><%= inventory.user_id %></td> -->
         <td><%= inventory.name %></td>
         <td><%= inventory.price %></td>
         <td><%= inventory.quantity %></td>
-        <td><%= link_to 'Show', inventory %></td>
+        <!-- <td><%= link_to 'Show', inventory %></td> -->
         <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
-        <td><%= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!-- <td><%= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
@@ -29,3 +33,4 @@
 <br>
 
 <%= link_to 'New Inventory', new_inventory_path %>
+</div>

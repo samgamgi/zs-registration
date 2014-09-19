@@ -3,16 +3,18 @@
 		<%= content_tag(:div, msg, class: "alert alert-info") %>
 		<% end %>
 
-<div class="jumbotron center">
-     <h1>Welcome to my Zip-Services!</h1>
-     <% if user_signed_in? %>
-     #do something
+<% if user_signed_in? %>
+       <%= link_to 'View Your Inventory', inventories_path %>
 
-     <% else %>
-     <p>
-       <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
-       <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-  	</p>    
-  	<% end %>
-  	
-</div>
+  <% else %>  
+    <div class="jumbotron center">
+         <h1>Welcome to Zip-Services!</h1>
+         
+         <p>
+           <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+           <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+      	</p>    
+      	
+      	
+    </div>
+<% end %>

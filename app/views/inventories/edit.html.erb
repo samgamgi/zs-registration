@@ -1,6 +1,27 @@
-<h1>Editing inventory</h1>
+<br>
+<div class="jumbotron">
+<%= form_for(@inventory) do |f| %>
+  <% if @inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
 
-<%= render 'form' %>
+      <ul>
+      <% @inventory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<%= link_to 'Show', @inventory %> |
-<%= link_to 'Back', inventories_path %>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'View Inventory', inventories_path %>
+</div>
