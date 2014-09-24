@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :inventories
-
+  resources :charges
   devise_for :users
   get "about" => "pages#about"
   root "pages#home"

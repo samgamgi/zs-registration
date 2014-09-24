@@ -1,8 +1,11 @@
 <%= render 'pages/header'%>
+<div class="container">
 <div class="jumbotron-center">
 	<div class="panel panel-default">
 	  <div class="panel-heading">
+	  	<div class="panel-title">
 	    <h1>Sign up</h1>
+	  </div>
 	  </div>
 
 	  <div class="panel-body">
@@ -10,17 +13,27 @@
 	      <%= devise_error_messages! %>
 
 	      <div class="form-group form-group-lg">
+	        <%= f.label :name %>
+	        <%= f.text_field :name, autofocus: true, class: "form-control input-md" %>
+	      </div>
+
+	      <div class="form-group form-group-lg">
 	        <%= f.label :email %>
-	        <%= f.email_field :email, autofocus: true, class: "form-control input-lg" %>
+	        <%= f.email_field :email, autofocus: true, class: "form-control input-md" %>
 	      </div>
 
 	      <div class="form-group form-goup-lg">
 	        <%= f.label :password %>
-	        <%= f.password_field :password, class: "form-control input-lg" %>
+	        <%= f.password_field :password, class: "form-control input-md" %>
+	      </div>
+
+	      <div class="form-group form-goup-lg">
+	        <%= f.label :phone %>
+	        <%= f.text_field :phone, class: "form-control input-md" %>
 	      </div>
 
 	      <div class="form-group">
-	        <%= f.submit "Sign up", class: "btn btn-primary" %>
+	        <%= f.submit "Sign up", class: "btn btn-primary", type: "tel" %>
 	      </div>
 	    <% end %>
 	  </div>
@@ -29,4 +42,5 @@
 	    <%= render "devise/shared/links" %>
 	  </div>
 	</div>
+</div>
 </div>

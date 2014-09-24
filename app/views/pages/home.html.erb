@@ -4,9 +4,13 @@
 		<% end %>
 
 <% if user_signed_in? %>
+      <div class="container">
+        <div class="jumbotron center">
        <%= link_to 'View Your Inventory', inventories_path %>
-
+      </div>
+      </div>
   <% else %>  
+    <div class="container">
     <div class="jumbotron center">
          <h1>Welcome to Zip-Services!</h1>
          
@@ -15,6 +19,6 @@
            <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
       	</p>    
       	
-      	
+    </div>
     </div>
 <% end %>
