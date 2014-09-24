@@ -14,7 +14,6 @@ gem 'devise', '~> 3.3.0'
 gem 'paperclip', '~> 4.2'
 gem 'masonry-rails', '~> 0.2.1'
 gem 'stripe', '~> 1.15.0'
-gem 'rack-wwwhisper', '~> 1.0'
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
