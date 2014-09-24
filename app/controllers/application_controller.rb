@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :protect
 
 def protect
-  @ips = ['127.0.0.1', '203.123.10.1'] #And so on ...]
+  @ips = ['98.101.39.134', '203.123.10.1'] #And so on ...]
   if not @ips.include? request.remote_ip
      if user = authenticate_with_http_basic { |u, p| u=='sbx' and p=='sbx' }
           @current_user = user
