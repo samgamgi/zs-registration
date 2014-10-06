@@ -6,7 +6,11 @@
 <% if user_signed_in? %>
       <div class="container">
         <div class="jumbotron center">
+       <% if current_user.inventories.blank? %>
+       <%= link_to 'Create an Order', new_inventory_path %>
+       <% else %>
        <%= link_to 'View Your Inventory', inventories_path %>
+      <% end %>
       </div>
       </div>
   <% else %>  
