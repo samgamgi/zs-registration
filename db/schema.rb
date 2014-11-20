@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140923183822) do
+ActiveRecord::Schema.define(version: 20141120034228) do
 
   create_table "inventories", force: true do |t|
     t.string   "description"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20140923183822) do
   end
 
   add_index "inventories", ["user_id"], name: "index_inventories_on_user_id"
+
+  create_table "products", force: true do |t|
+    t.string   "name"
+    t.integer  "ParLevelAmount"
+    t.integer  "PricePerPar"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "inventory_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

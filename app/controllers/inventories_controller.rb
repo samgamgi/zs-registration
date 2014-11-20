@@ -2,6 +2,7 @@ class InventoriesController < ApplicationController
   before_action :set_inventory, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
+
   def index
     @inventories = current_user.inventories
   end
@@ -10,7 +11,8 @@ class InventoriesController < ApplicationController
   end
 
   def new
-    @inventory = current_user.inventories.build
+     @inventory = current_user.inventories.build
+
   end
 
   def edit
@@ -18,14 +20,12 @@ class InventoriesController < ApplicationController
 
   def create
     @inventory = current_user.inventories.build(inventory_params)
-
+    
     respond_to do |format|
-      if @inventory.save
-        format.html { redirect_to @inventory, notice: 'Inventory was successfully created.' }
-        format.json { render :show, status: :created, location: @inventory }
+      if @inventory.save(inventory_params)
+        format.html { redirect_to @inventory, notice: 'Inventory was successfully added.' }
       else
-        format.html { render :new }
-        format.json { render json: @inventory.errors, status: :unprocessable_entity }
+        render action: 'new'
       end
     end
   end
@@ -33,11 +33,9 @@ class InventoriesController < ApplicationController
   def update
     respond_to do |format|
       if @inventory.update(inventory_params)
-        format.html { redirect_to @inventory, notice: 'Inventory was successfully updated.' }
-        format.json { render :show, status: :ok, location: @inventory }
+        redirect_to @inventory, notice: 'Inventory was successfully updated.'
       else
-        format.html { render :edit }
-        format.json { render json: @inventory.errors, status: :unprocessable_entity }
+        render action: 'edit' 
       end
     end
   end
@@ -45,8 +43,7 @@ class InventoriesController < ApplicationController
   def destroy
     @inventory.destroy
     respond_to do |format|
-      format.html { redirect_to inventories_url, notice: 'Inventory was successfully destroyed.' }
-      format.json { head :no_content }
+      redirect_to inventories_url, notice: 'Inventory was successfully destroyed.'
     end
   end
 

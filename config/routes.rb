@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  resources :products
   resources :inventories
   resources :charges
   devise_for :users
+  resources :entries, defaults: { format: 'json' }
   get "about" => "pages#about"
   root "pages#home"
 

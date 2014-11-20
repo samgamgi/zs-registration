@@ -17,24 +17,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.check_box :name %>
-    <%= f.label :name, name = "Towels" %><br>
-    
+ <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= show_towel_unit_price %>
-    <%= f.number_field :price %>
-  </div>
+  
+  <% f.fields_for :products do |builder| %>
+  <%= builder.label :PricePerPar, "Price" %>
+  <%= builder.number_field :PricePerPar, :rows => 3 %>
+  <% end %> 
+  
   <div class="field">
     <%= f.label :quantity %><br>
     <%= f.number_field :quantity %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
