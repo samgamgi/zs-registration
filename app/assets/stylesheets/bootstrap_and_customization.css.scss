@@ -7,8 +7,10 @@ $navbar-default-bg:                       white;
 $navbar-default-brand-color:      				#2c3e50;
 $brand-primary:                           #c0392b;
 $jumbotron-bg:                            white;
+$panel-padding:												30px;
 
 @import 'bootstrap';
+
 
 .center {
      text-align: center;
@@ -45,3 +47,15 @@ $jumbotron-bg:                            white;
 	overflow:hidden;
 	float:left;
 }
+
+.text {
+  	 font-size: 20px;
+  	 font-family: Helvetica;   
+}
+
+.chart-label {
+	text-align: center;
+	margin-top: 25px;
+}
+
+   

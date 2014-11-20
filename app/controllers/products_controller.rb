@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    # @product = Product.find_by(name: 'Bar Towel')
   end
 
   def edit

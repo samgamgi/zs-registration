@@ -54,6 +54,8 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    easy_as_pie (0.1.2)
+      rails (>= 3.0)
     erubis (2.7.0)
     execjs (2.2.1)
     hike (1.2.3)
@@ -165,6 +167,7 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   devise (~> 3.3.0)
+  easy_as_pie
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks

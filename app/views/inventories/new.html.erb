@@ -16,16 +16,13 @@
       </ul>
     </div>
   <% end %>
-
+ 
+ 
+ 
  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :name , name = @product %><br>
+    <% f.text_field :name, :name => @product  %><br>
   </div>
-  
-  <% f.fields_for :products do |builder| %>
-  <%= builder.label :PricePerPar, "Price" %>
-  <%= builder.number_field :PricePerPar, :rows => 3 %>
-  <% end %> 
   
   <div class="field">
     <%= f.label :quantity %><br>

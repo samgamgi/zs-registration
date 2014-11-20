@@ -12,7 +12,7 @@ class InventoriesController < ApplicationController
 
   def new
      @inventory = current_user.inventories.build
-
+     @product = Product.find_by(name: "Bar Towel").name
   end
 
   def edit

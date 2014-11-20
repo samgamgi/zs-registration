@@ -14,6 +14,8 @@ gem 'devise', '~> 3.3.0'
 gem 'paperclip', '~> 4.2'
 gem 'masonry-rails', '~> 0.2.1'
 gem 'stripe', '~> 1.15.0'
+gem 'easy_as_pie'
+
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
