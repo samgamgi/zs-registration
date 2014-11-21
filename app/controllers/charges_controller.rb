@@ -3,6 +3,7 @@ def new
 end
 
 def create
+  @subscription = Subscription.order(created: :desc).first
   # Amount in cents
   @amount = 500
 

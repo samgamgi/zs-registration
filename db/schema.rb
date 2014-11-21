@@ -11,27 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141120034228) do
-
-  create_table "inventories", force: true do |t|
-    t.string   "description"
-    t.string   "name"
-    t.integer  "price"
-    t.integer  "quantity"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-  end
-
-  add_index "inventories", ["user_id"], name: "index_inventories_on_user_id"
+ActiveRecord::Schema.define(version: 20141121012922) do
 
   create_table "products", force: true do |t|
     t.string   "name"
-    t.integer  "ParLevelAmount"
-    t.integer  "PricePerPar"
+    t.string   "description"
+    t.decimal  "price",       precision: 10, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "inventory_id"
+  end
+
+  create_table "subscription_lines", force: true do |t|
+    t.integer "subscription_id"
+    t.integer "product_id"
+    t.integer "quantity"
+    t.integer "price"
+  end
+
+  create_table "subscriptions", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

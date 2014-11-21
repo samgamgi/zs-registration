@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  resources :subscription_lines
   resources :products
-  resources :inventories
+  resources :subscriptions
   resources :charges
   devise_for :users
   resources :entries, defaults: { format: 'json' }

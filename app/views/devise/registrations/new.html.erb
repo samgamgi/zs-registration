@@ -44,3 +44,14 @@
 	</div>
 </div>
 </div>
+
+<script type="text/javascript">
+  $(window).load(function()
+{
+   var phones = [{ "mask": "(###) ###-####"}, { "mask": "(###) ###-##############"}];
+    $('#user_phone').inputmask({ 
+        mask: phones, 
+        greedy: false, 
+        definitions: { '#': { validator: "[0-9]", cardinality: 1}} });
+});
+</script>
