@@ -16,7 +16,6 @@ class ProductsController < ApplicationController
   end
 
   def edit
-  	@product = Product.all
   end
 
   def create
@@ -59,6 +58,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :ParLevelAmount, :PricePerPar)
+      params.require(:product).permit(:name, :description, :price)
     end
 end

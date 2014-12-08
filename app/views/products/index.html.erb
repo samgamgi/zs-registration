@@ -19,6 +19,8 @@
         <td><%= p.name %></td>
         <td><%= p.description %></td>
         <td><%= p.price %></td>
+        <td><%= link_to 'Show', p %></td>
+        <td><%= link_to 'Delete', p, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         
       </tr>
     <% end %>
