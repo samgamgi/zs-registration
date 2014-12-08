@@ -8,7 +8,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Zip-Services", "http://www.zip-services.com", class: "navbar-brand" %>
+      <%= link_to('http://www.zip-services.com') do %>
+        <%= image_tag('zip-services_300x200_logo.png', width: '150', height: '100', 
+        alt: 'Zip-Services') %>
+<% end %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -16,7 +19,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "(919) 590-4029", tel:9195904029 %></li>
         <% if user_signed_in? %>
-          <li><%= link_to "Settings", edit_user_registration_path %></li>
+          <li><%= link_to "Account Settings", edit_user_registration_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li> 
         
         <% else %>

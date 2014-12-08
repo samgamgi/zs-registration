@@ -17,7 +17,7 @@ def create
 		@subscription.subscription_lines.new(product_id: product_id, quantity: quantity, price: product.price)
 	end
 	@subscription.save
-	redirect_to subscription_path(@subscription)
+	redirect_to root_path, notice: 'Your subscription was updated successfully!'
 end
 
 def edit

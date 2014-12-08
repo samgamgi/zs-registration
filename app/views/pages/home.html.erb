@@ -18,25 +18,25 @@
       <div class="chart" data-percent="80" data-scale-color="#ffb400">
         <div class="text">80%</div>
       </div>
-      <div class="chart-label">Bar Towels</div>
+      <div class="chart-label">Micro-fiber towels</div>
     </div>  
     <div class="col-md-3">
       <div class="chart" data-percent="50" data-scale-color="#ffb400" barColor="white">
         <div class="text">50%</div>
       </div>
-      <div class="chart-label">Napkins</div>
+      <div class="chart-label">Striped Bistro Napkin</div>
+    </div>
+    <div class="col-md-3">
+      <div class="chart" data-percent="96" data-scale-color="#ffb400">
+        <div class="text">96%</div>
+      </div>
+      <div class="chart-label">Full Apron</div>
     </div>
     <div class="col-md-3">
       <div class="chart" data-percent="100" data-scale-color="#ffb400">
         <div class="text">100%</div>
       </div>
-      <div class="chart-label">Floor Mats</div>
-    </div>
-    <div class="col-md-3">
-      <div class="chart" data-percent="75" data-scale-color="#ffb400">
-        <div class="text">75%</div>
-      </div>
-      <div class="chart-label">Soap</div>
+      <div class="chart-label">Mop Head</div>
     </div>
   </div>
 </div>
@@ -44,7 +44,14 @@
 <br>
 <br>
 <br>
-            <%= link_to 'Edit Your Weekly Order', new_subscription_path, class: "btn btn-default btn-lg" %>
+            <div class="col-md-6">
+              <%= link_to 'Edit Your Weekly Order', new_subscription_path, class: "btn btn-default btn-lg" %>
+            </div>
+            <div class="col-md-6">
+            <%= mail_to 'help@zip-services.com', 'Contact Us' , class: "btn btn-default btn-lg" %>
+          </div>
+          <br>
+          <br>
         <% end %>
         </div>
         </div>
